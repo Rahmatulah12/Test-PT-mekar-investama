@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "6f25dad1-8af9-487d-95d9-252eeb0bb4ab",
+		"name": "Test PT Mekar Investama",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Balance",
+			"item": [
+				{
+					"name": "Transaction Balance List By User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJibGFja2d1bkAxMiIsImlhdCI6MTY1MDc0MTc3NCwiZXhwIjoxNjUwODI4MTc0fQ.EWMe3BcOO0dPz6hAg21qm_jaR8Ln0H3ukn8IsSexN7zXRplXJVIZpk0x3fsuh57qq7rYl96QTMgk6xxXIx97yg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/api/transactions/",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"transactions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJibGFja2d1bkAxMiIsImlhdCI6MTY1MDc0MTc3NCwiZXhwIjoxNjUwODI4MTc0fQ.EWMe3BcOO0dPz6hAg21qm_jaR8Ln0H3ukn8IsSexN7zXRplXJVIZpk0x3fsuh57qq7rYl96QTMgk6xxXIx97yg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/api/transactions/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"transactions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Transaksi",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJibGFja2d1bkAxMiIsImlhdCI6MTY1MDc0MTc3NCwiZXhwIjoxNjUwODI4MTc0fQ.EWMe3BcOO0dPz6hAg21qm_jaR8Ln0H3ukn8IsSexN7zXRplXJVIZpk0x3fsuh57qq7rYl96QTMgk6xxXIx97yg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sender\" : \"087885664813\",\n    \"receiver\" : \"081122341212\",\n    \"type\" : \"topup\",\n    \"balance\" : 100000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/api/transactions/",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"transactions",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"test@mail.com\",\n    \"username\" : \"test_user\",\n    \"full_name\" : \"User Test\",\n    \"phone_no\" : \"087885664812\",\n    \"password\" : \"12345678\",\n    \"roles\" : [\"ROLE_ADMIN\", \"ROLE_CUSTOMER\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"blackgun@12\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refreshToken\" : \"49f9cf21-bbea-4358-8196-f12891ed6881\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/auth/refreshtoken",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"auth",
+						"refreshtoken"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
